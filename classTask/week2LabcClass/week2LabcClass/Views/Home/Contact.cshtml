@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<span>@ViewBag.a + @ViewBag.b = @ViewBag.c</span>
+<br />
+<span>@ViewData["x"] + @ViewData["y"] = @ViewData["z"]</span>
+
+<address>
+    One Microsoft Way<br />
+    Redmond, WA 98052-6399<br />
+    <abbr title="Phone">P:</abbr>
+    425.555.0100
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+<table class="table">
+     @*@for (int i = 0; i < ViewBag.Names.length; i++)
+     {
+         <tr>
+             <td>@ViewBag.Names[i]</td>
+         </tr>
+
+     }*@
+
+    @foreach (var n in ViewBag.Names)
+    {
+        <tr>
+            <td>@n</td>
+        </tr>
+
+    } 
+
+    @*Not working ViewData*@
+    
+    @*@foreach (var n in ViewData["xyz"])
+    {
+        <tr>
+            <td>@n</td>
+        </tr>
+
+    }*@
+</table>
